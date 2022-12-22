@@ -1,33 +1,19 @@
-import { useState } from 'react'
-import reactLogo from '../assets/react.svg'
+import NavBar from '../components/home/nav_bar'
+import BannerHeader from '../components/home/banner_header'
+import Body from '../components/home/body'
+import Footer from '../components/home/footer'
 
 function home(){
 
-    const [count, setCount] = useState(0)
-
   return (
-    <div className="home">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/src/assets/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
+
+        <div id="home">
+        <BannerHeader />
+        <Body />
+        <Footer />
+        <NavBar />        
+        </div>
+
   )
 }
 
