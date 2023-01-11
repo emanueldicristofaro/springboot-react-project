@@ -16,7 +16,7 @@ public class ConverterMovie {
 
 		MovieModel movieModel = new MovieModel();
 		movieModel.setId(movie.getId());
-		movieModel.setName(movie.getPath());
+		movieModel.setName(movie.getName());
 		movieModel.setDescription(movie.getDescription());
 		movieModel.setAverage(movie.getAverage());
 		movieModel.setPath(movie.getPath());
