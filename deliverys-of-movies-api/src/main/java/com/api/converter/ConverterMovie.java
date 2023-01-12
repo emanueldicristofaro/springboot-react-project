@@ -7,7 +7,6 @@ import com.api.model.MovieModel;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Component("converterMovie")
 public class ConverterMovie {
