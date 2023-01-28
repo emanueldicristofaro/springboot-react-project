@@ -13,9 +13,9 @@ function viewMovie(){
         setMovie(response)
     }
 
-    useEffect(()=>{
+    /*useEffect(()=>{
         searchMovie(id)
-    }, [])
+    }, [])*/
 
     return (
 
