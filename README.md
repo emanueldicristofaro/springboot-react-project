@@ -1,7 +1,7 @@
 # springboot-react-project
 Proyecto de pagina de peliculas (Frontend) React JS ⚛️ y (Backend) Spring Boot 🍃
 
-# Crear e iniciar el proyecto react sin Vite
+## Crear e iniciar el proyecto react sin Vite
 
 Para crearlo:
 
