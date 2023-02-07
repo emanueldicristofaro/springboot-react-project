@@ -3,7 +3,8 @@ import { useEffect, useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import CommentsInterface from '../../interfaces/comments'
 import CommentsService from '../../services/comments'
-import { validateAge } from '../form/validates'
+import CommentsServicePost from '../../services/post_review'
+//import { validateAge } from '../form/validates'
 
 function comments(){
 
@@ -11,9 +12,7 @@ function comments(){
 
         user: String,
         date: String,
-        age: Number,
-        email: String,
-        description: String
+        description: String,
     }
 
     const { id } = useParams()
@@ -28,12 +27,12 @@ function comments(){
 
     const formData: SubmitHandler<inputs> = data => {
 
-        console.log(data)
+        CommentsServicePost(data, id)
     }
 
-    /*useEffect(()=>{
+    useEffect(()=>{
         searchComments(id)
-    }, [])*/
+    }, [])
 
     return (
 
@@ -59,6 +58,7 @@ function comments(){
                         {errors.user?.type === 'required' && <span>Este campo es requerido</span>}
                         </div>
 
+                        {/*
                         <div className="mb-3">
                         <label className="form-label">Correo electrónico</label>
                         <input type="text" className="form-control" id="email" {...register('email', {
@@ -78,6 +78,7 @@ function comments(){
                         {errors.age?.type === 'required' && <span>Este campo es requerido</span>}
                         {errors.age?.type === 'validate' && <span>La edad sobrepasa lo establecido</span>}
                         </div>
+                        */}
 
                         <div className="mb-3">
                         <label className="form-label">Fecha</label>
@@ -122,8 +123,7 @@ function comments(){
                             </div>
                             </div>
                         ))}
-                        
-                    
+                          
                 </div>
                 
             </div>

@@ -23,4 +23,11 @@ public class ReviewController {
 
         return reviewService.allById(id);
     }
+    
+    @PostMapping("/{id}/post")
+    @ResponseBody
+    public boolean sendReview(@RequestBody ReviewModel reviewModel, @PathVariable(value = "id") long id) {
+    	
+    	return reviewService.sendReview(reviewModel, id);
+    }
 }
