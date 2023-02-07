@@ -4,6 +4,7 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import CommentsInterface from '../../interfaces/comments'
 import CommentsService from '../../services/comments'
 import CommentsServicePost from '../../services/post_review'
+import moment from 'moment'; //Para poder cambiar el formato de las fechas
 //import { validateAge } from '../form/validates'
 
 function comments(){
@@ -18,6 +19,9 @@ function comments(){
     const { id } = useParams()
     const [comments, setComments] = useState<Array<CommentsInterface>>([])
     const { register, handleSubmit, watch, formState: { errors } } = useForm<inputs>()
+
+    const date = new Date();
+    const currentDate = date.toISOString().slice(0, 10) //Formato YYYY-MM-DD
 
     const searchComments = async (id: string|undefined) => {
 
@@ -82,9 +86,9 @@ function comments(){
 
                         <div className="mb-3">
                         <label className="form-label">Fecha</label>
-                        <input type="date" className="form-control" id="date" {...register('date', {
+                        <input type="text" className="form-control" id="date" value={currentDate} {...register('date', {
                             required: true
-                        })}/>
+                        })} readOnly/>
                         {errors.date?.type === 'required' && <span>Este campo es requerido</span>}
                         </div>
 
@@ -115,7 +119,7 @@ function comments(){
                             </div>
                             <div className="mb-3">
                             <label className="form-label">Fecha</label>
-                            <input type="text" className="form-control" id="date" name="date" value={com.date} readOnly/>
+                            <input type="text" className="form-control" id="date" name="date" value={moment.utc(com.date).format('YYYY-MM-DD')} readOnly/>
                             </div>
                             <div className="mb-3">
                             <label className="form-label">Descripción</label>
