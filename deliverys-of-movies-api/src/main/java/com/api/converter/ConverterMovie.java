@@ -7,7 +7,6 @@ import com.api.model.MovieModel;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Component("converterMovie")
 public class ConverterMovie {
@@ -16,7 +15,7 @@ public class ConverterMovie {
 
 		MovieModel movieModel = new MovieModel();
 		movieModel.setId(movie.getId());
-		movieModel.setName(movie.getPath());
+		movieModel.setName(movie.getName());
 		movieModel.setDescription(movie.getDescription());
 		movieModel.setAverage(movie.getAverage());
 		movieModel.setPath(movie.getPath());

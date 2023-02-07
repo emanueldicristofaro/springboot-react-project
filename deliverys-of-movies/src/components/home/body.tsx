@@ -21,7 +21,7 @@ function body(){
                         <p><b>Reparto principal:</b> Rosa Salazar, Christoph Waltz, Jennifer Connelly</p>
                     </div>
                     <div className="card-body">
-                        <a href="#" className="card-link">Ver película</a>
+                        <a href={`movie_view/${1}`} className="card-link">Ver película</a>
                     </div>
                     </div>
 
@@ -35,7 +35,7 @@ function body(){
                         <p><b>Reparto principal:</b> Bill Skarsgård, Jaeden Martell, Finn Wolfhard, Sophia Lillis</p>
                     </div>
                     <div className="card-body">
-                        <a href="#" className="card-link">Ver película</a>
+                        <a href={`movie_view/${2}`} className="card-link">Ver película</a>
                     </div>
                     </div>
 
@@ -49,7 +49,7 @@ function body(){
                         <p><b>Reparto principal:</b> Marlon Brando, Al Pacino, James Caan, Diane Keaton, Robert Duvall</p>
                     </div>
                     <div className="card-body">
-                        <a href="#" className="card-link">Ver película</a>
+                        Próximamente
                     </div>
                     </div>
 
@@ -63,7 +63,7 @@ function body(){
                         <p><b>Reparto principal:</b> Dakota Fanning, Teri Hatcher, John Hodgman, Jennifer Saunders</p>
                     </div>
                     <div className="card-body">
-                        <a href="#" className="card-link">Ver película</a>
+                        <a href={`movie_view/${3}`} className="card-link">Ver película</a>
                     </div>
                     </div>
 

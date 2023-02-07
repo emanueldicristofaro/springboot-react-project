@@ -24,15 +24,6 @@ public class Movie implements Serializable{
 	@Column(name = "path")
 	private String path;
 	public Movie() {}
-	public Movie(int id, String name, String description, Float average, String path) {
-		
-		super();
-		this.id = id;
-		this.name = name;
-		this.description = description;
-		this.average = average;
-		this.path = path;
-	}
 
 	public long getId() {
 		return id;

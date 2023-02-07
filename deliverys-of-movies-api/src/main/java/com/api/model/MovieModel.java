@@ -27,7 +27,7 @@ public class MovieModel {
 	}
 
 	public MovieModel(int id, String name, String description, Float average, String path) {
-		
+
 		super();
 		this.id = id;
 		this.name = name;
