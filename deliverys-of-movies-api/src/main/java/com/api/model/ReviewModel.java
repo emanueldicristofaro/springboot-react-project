@@ -7,7 +7,7 @@ import java.util.Date;
 
 public class ReviewModel {
 
-    private long id;
+    private int id;
 
     private String user;
 
@@ -28,7 +28,8 @@ public class ReviewModel {
         this.movie = review.getMovie();
     }
 
-    public ReviewModel(long id, String user, String description, Date date, Movie movie) {
+    public ReviewModel(int id, String user, String description, Date date, Movie movie) {
+    	
         this.id = id;
         this.user = user;
         this.description = description;
@@ -36,11 +37,11 @@ public class ReviewModel {
         this.movie = movie;
     }
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

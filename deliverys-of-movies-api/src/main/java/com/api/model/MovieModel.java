@@ -4,7 +4,7 @@ import com.api.entity.Movie;
 
 public class MovieModel {
 	
-	private long id;
+	private int id;
 	
 	private String name;
 	
@@ -28,7 +28,6 @@ public class MovieModel {
 
 	public MovieModel(int id, String name, String description, Float average, String path) {
 
-		super();
 		this.id = id;
 		this.name = name;
 		this.description = description;
@@ -36,11 +35,11 @@ public class MovieModel {
 		this.path = path;
 	}
 
-	public long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 

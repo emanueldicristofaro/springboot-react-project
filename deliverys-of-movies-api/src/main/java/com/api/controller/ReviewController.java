@@ -19,15 +19,22 @@ public class ReviewController {
 
     @GetMapping("/{id}")
     @ResponseBody
-    public List<ReviewModel> getListReviews(@PathVariable(value = "id") long id){
+    public List<ReviewModel> getListReviews(@PathVariable(value = "id") int id){
 
         return reviewService.allById(id);
     }
     
     @PostMapping("/{id}/post")
     @ResponseBody
-    public boolean sendReview(@RequestBody ReviewModel reviewModel, @PathVariable(value = "id") long id) {
+    public boolean sendReview(@RequestBody ReviewModel reviewModel, @PathVariable(value = "id") int id) {
     	
     	return reviewService.sendReview(reviewModel, id);
+    }
+    
+    @DeleteMapping("/{id}/delete")
+    @ResponseBody
+    public boolean deleteReview(@PathVariable(value = "id") int id){
+    	
+    	return reviewService.deleteReview(id);
     }
 }

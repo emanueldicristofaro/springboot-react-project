@@ -27,7 +27,7 @@ public class MovieController {
 
 	@GetMapping(path = "/{id}")
 	@ResponseBody
-	public MovieModel getMovie(@PathVariable(value = "id") long id){
+	public MovieModel getMovie(@PathVariable(value = "id") int id){
 		return movieService.getMovie(id);
 	}
 }

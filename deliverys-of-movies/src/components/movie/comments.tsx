@@ -1,10 +1,7 @@
 import { useParams } from 'react-router-dom'
-import { useEffect, useState } from "react";
-import { useForm, SubmitHandler } from "react-hook-form";
-import CommentsInterface from '../../interfaces/comments'
-import CommentsService from '../../services/comments'
+import { useForm, SubmitHandler } from "react-hook-form"
 import CommentsServicePost from '../../services/post_review'
-import moment from 'moment'; //Para poder cambiar el formato de las fechas
+import CommentsDelete from './subcomponents/delete_comments'
 //import { validateAge } from '../form/validates'
 
 function comments(){
@@ -14,29 +11,19 @@ function comments(){
         user: String,
         date: String,
         description: String,
+        delete: Number
     }
 
     const { id } = useParams()
-    const [comments, setComments] = useState<Array<CommentsInterface>>([])
     const { register, handleSubmit, watch, formState: { errors } } = useForm<inputs>()
 
     const date = new Date();
     const currentDate = date.toISOString().slice(0, 10) //Formato YYYY-MM-DD
 
-    const searchComments = async (id: string|undefined) => {
-
-        const response = await CommentsService(id);
-        setComments(response)
-    }
-
     const formData: SubmitHandler<inputs> = data => {
 
         CommentsServicePost(data, id)
     }
-
-    useEffect(()=>{
-        searchComments(id)
-    }, [])
 
     return (
 
@@ -109,27 +96,7 @@ function comments(){
                 <div className="card-header bg-primary text-white">
                     Comentarios
                 </div>
-                <div className="card-body">
-
-                        {comments.map((com) => (
-                            <div key={com.id}>
-                            <div className="mb-3">
-                            <label className="form-label">Usuario</label>
-                            <input type="text" className="form-control" id="user" name="user" value={com.user} readOnly/>
-                            </div>
-                            <div className="mb-3">
-                            <label className="form-label">Fecha</label>
-                            <input type="text" className="form-control" id="date" name="date" value={moment.utc(com.date).format('YYYY-MM-DD')} readOnly/>
-                            </div>
-                            <div className="mb-3">
-                            <label className="form-label">Descripción</label>
-                            <textarea className="form-control" id="description" name="description" value={com.description} readOnly></textarea>
-                            </div>
-                            </div>
-                        ))}
-                          
-                </div>
-                
+                <CommentsDelete/>    
             </div>
         </div>
     )

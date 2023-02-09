@@ -32,7 +32,7 @@ public class ReviewService {
         this.reviewRepository = reviewRepository;
     }
 
-    public List<ReviewModel> allById(long id){
+    public List<ReviewModel> allById(int id){
 
         List<Review> reviewList = reviewRepository.findByMovieId(id);
         List<ReviewModel> reviewModelList = converterReview.convertList(reviewList);
@@ -40,7 +40,7 @@ public class ReviewService {
         return reviewModelList;
     }
     
-    public boolean sendReview(ReviewModel reviewModel, long id) {
+    public boolean sendReview(ReviewModel reviewModel, int id) {
     	
     	Movie movie = movieRepository.findById(id);
     	Review review = converterReview.convertObject(reviewModel, movie);
@@ -48,6 +48,20 @@ public class ReviewService {
     	try {
     		
     		reviewRepository.save(review);
+    		return true;
+    		
+    	} catch (Exception e) {
+    		
+    		return false;
+    	}
+    }
+    
+    public boolean deleteReview(int id) {
+    	
+    	
+    	try {
+    	
+    		reviewRepository.deleteById(id);
     		return true;
     		
     	} catch (Exception e) {

@@ -35,7 +35,7 @@ public class MovieService {
 
 	}
 
-	public MovieModel getMovie(long id){
+	public MovieModel getMovie(int id){
 
 		Movie movie = movieRepository.findById(id);
 		MovieModel movieModel = converterMovie.convertMovieToModel(movie);

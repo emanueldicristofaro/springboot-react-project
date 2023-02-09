@@ -2,20 +2,15 @@ package com.api.entity;
 
 import jakarta.persistence.*;
 
-import java.io.Serializable;
 import java.util.Date;
 
 @Entity
 @Table(name = "review")
-public class Review implements Serializable {
+public class Review {
 
-    /**
-     *
-     */
-    private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    private int id;
     @Column(name = "user")
     private String user;
     @Column(name = "description")
@@ -26,11 +21,11 @@ public class Review implements Serializable {
     @JoinColumn(name = "fk_movie")
     Movie movie;
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
