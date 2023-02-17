@@ -1,20 +1,14 @@
 package com.api.entity;
 
-import java.io.Serializable;
-
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "movie")
-public class Movie implements Serializable{
+public class Movie {
 	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
+	private int id;
 	@Column(name = "name")
 	private String name;
 	@Column(name = "description")
@@ -23,13 +17,13 @@ public class Movie implements Serializable{
 	private Float average;
 	@Column(name = "path")
 	private String path;
-	public Movie() {}
 
-	public long getId() {
+	
+	public int getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
