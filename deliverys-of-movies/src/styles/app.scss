@@ -11,6 +11,28 @@
   	width: 100%;
 }
 
+.menu {
+	position: relative;
+}
+
+.menu li {
+	list-style: none;
+	margin-right: 30px;
+	float: left;
+}
+
+.menu li a{
+	text-decoration: none;
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: 600;
+	transition: 0.5s;
+}
+
+.menu li a:hover {
+	color: #33383b;
+}
+
 .bannerHeader {
 	margin-top: 30px;
 }
